@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --border-color: #30363d;
+  --text-main: #c9d1d9;
+  --text-muted: #8b949e;
+}
+
+body {
+  color: var(--text-main);
+  background: var(--bg-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.panel {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+}
+
+.panel-interactive {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.panel-interactive:hover {
+  border-color: #8b949e;
+}
+
+.char-cell {
+  transition: all 0.12s ease-in-out;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.char-default {
+  background: #161b22;
+  border: 1px solid #30363d;
+  color: #8b949e;
+}
+
+.char-current {
+  background: #1f242d;
+  border: 2px solid #58a6ff;
+  color: #f0f6fc;
+  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.15);
+}
+
+.char-done {
+  background: rgba(63, 185, 80, 0.1);
+  border: 1px solid rgba(63, 185, 80, 0.4);
+  color: #3fb950;
+}
+
+.char-error-state {
+  background: rgba(248, 81, 73, 0.15);
+  border: 2px solid #f85149;
+  color: #f85149;
+  box-shadow: 0 0 0 3px rgba(248, 81, 73, 0.2);
+  animation: mini-shake 0.2s ease-in-out;
+}
+
+@keyframes mini-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  75% { transform: translateX(3px); }
+}
